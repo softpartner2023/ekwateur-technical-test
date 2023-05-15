@@ -3,12 +3,13 @@ package fr.ekwateur.billing.service;
 import fr.ekwateur.billing.domain.BillDetails;
 import fr.ekwateur.billing.domain.BillRequest;
 import fr.ekwateur.billing.enums.PriceCategory;
+import fr.ekwateur.billing.exception.PriceCategoryNotSupportedException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.math.BigDecimal;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class BillingServiceTest {
@@ -71,5 +72,11 @@ class BillingServiceTest {
                 () -> assertEquals(billDetailsExpected.getConsumedGaz(), billDetails.getConsumedGaz()),
                 () -> assertEquals(billDetailsExpected.getTotalGazPrice(), billDetails.getTotalGazPrice()),
                 () -> assertEquals(billDetailsExpected.getTotalPrice(), billDetails.getTotalPrice()));
+    }
+
+    @Test
+    public void shouldThrowPriceCategoryNotSupportedException() {
+        BillRequest billRequest = new BillRequest("PARTICULAR_PLUS", BigDecimal.valueOf(10), BigDecimal.valueOf(10));
+        assertThrows(PriceCategoryNotSupportedException.class, () -> billingService.getBillDetails(billRequest));
     }
 }
