@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fr.ekwateur</groupId>
-	<artifactId>billing</artifactId>
+	<artifactId>ekwateur-technical-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>billing</name>
+	<name>ekwateur-technical-test</name>
 	<description>Ekwateur technical test</description>
 	<properties>
 		<java.version>1.8</java.version>
