@@ -38,9 +38,9 @@ class BillingServiceTest {
 
     @Test
     public void shouldReturnCorrectBillDetailForProPricing() {
-        BillDetails billDetailsExpected = new BillDetails("PRO", new BigDecimal("0.114"),
-                BigDecimal.valueOf(10), new BigDecimal("1.140"), new BigDecimal("0.111"),
-                BigDecimal.valueOf(10), new BigDecimal("1.110"), new BigDecimal("2.250"));
+        BillDetails billDetailsExpected = new BillDetails("PRO", new BigDecimal("0.118"),
+                BigDecimal.valueOf(10), new BigDecimal("1.180"), new BigDecimal("0.113"),
+                BigDecimal.valueOf(10), new BigDecimal("1.130"), new BigDecimal("2.310"));
         BillRequest billRequest = new BillRequest("PRO", BigDecimal.valueOf(10), BigDecimal.valueOf(10));
         BillDetails billDetails = billingService.getBillDetails(billRequest);
         assertAll("Verify Bill Details",
@@ -57,9 +57,9 @@ class BillingServiceTest {
 
     @Test
     public void shouldReturnCorrectBillDetailForProPlusPricing() {
-        BillDetails billDetailsExpected = new BillDetails("PRO_PLUS", new BigDecimal("0.118"),
-                BigDecimal.valueOf(10), new BigDecimal("1.180"), new BigDecimal("0.113"),
-                BigDecimal.valueOf(10), new BigDecimal("1.130"), new BigDecimal("2.310"));
+        BillDetails billDetailsExpected = new BillDetails("PRO_PLUS", new BigDecimal("0.114"),
+                BigDecimal.valueOf(10), new BigDecimal("1.140"), new BigDecimal("0.111"),
+                BigDecimal.valueOf(10), new BigDecimal("1.110"), new BigDecimal("2.250"));
         BillRequest billRequest = new BillRequest("PRO_PLUS", BigDecimal.valueOf(10), BigDecimal.valueOf(10));
         BillDetails billDetails = billingService.getBillDetails(billRequest);
         assertAll("Verify Bill Details",
