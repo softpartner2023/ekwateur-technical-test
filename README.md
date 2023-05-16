@@ -8,6 +8,7 @@ Request example :
 	"consumedElectricity": 10,
 	"consumedGaz": 10
 }
+The request attribute "priceCategory" accept the values : "PARTICULAR","PRO","PRO_PLUS" 
 
 Expected result :
 {
