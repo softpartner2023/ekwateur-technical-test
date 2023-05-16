@@ -1,18 +1,19 @@
 package fr.ekwateur.billing.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.math.BigDecimal;
 
+@JsonPropertyOrder({ "priceCategory", "consumedElectricity", "consumedGaz" })
 public class BillRequestDto {
 
-    @JsonProperty
+    @JsonProperty()
     private String priceCategory;
 
-    @JsonProperty
+    @JsonProperty()
     private BigDecimal consumedElectricity;
 
-    @JsonProperty
+    @JsonProperty()
     private BigDecimal consumedGaz;
 
 
